@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+	
+        // const tatkalBook=new Promise((resolve,reject)=>{
+            
+        // let bookingSuccess=true;
+        // if(bookingSuccess)
+        // resolve()
+        // else
+        // reject()
+        // })
+        // console.log(tatkalBook)
+        // tatkalBook.then(()=>console.log(`Thank you for booking my ticket`))
+        // .catch(()=>console.log(`Thank for yor effort`))
+
+ fetch('https://api-thirukkural.vercel.app/api?num=36769')
+.then(response=>response.json())
+ .then(data=>document.write(data.line1,data.line2,data.tam_exp))
+ .catch(err=>console.log(err))
+        
+        
+                 
+        
+        
+        
+        
+        </script>
+</body>
+</html>

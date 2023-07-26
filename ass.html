@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return first and last name from a form</title>
+    <link rel="stylesheet" href="ass.css">
+   
+</head>
+<body>
+
+    <div class="container" id="mainDiv">
+       <div id="secDiv"></div>
+    </div>
+
+    <button onclick="changeText()">CLick me</button>
+    <script>
+
+        let paraEl = document.createElement("p")
+        paraEl.setAttribute("class","head")
+        console.log(paraEl)
+        paraEl.textContent = "this is paragraph"
+        paraEl.style.background = "black"
+        paraEl.style.color ="white"
+        paraEl.style.textAlign ="center"
+        document.getElementById("secDiv").appendChild(paraEl)
+ 
+
+        function changeText(){
+        paraEl.style.background="orange";
+        paraEl.style.color="white";
+        paraEl.style.textAlign="right"
+        }
+        
+
+    </script>
+   
+</body>
+</html>
