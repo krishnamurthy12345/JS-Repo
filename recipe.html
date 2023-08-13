@@ -1,0 +1,51 @@
+<!-- Add Recipe Using Object -->
+<!-- ---------------------------- -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Recipe</title>
+  </head>
+  <body>
+  
+    <header>
+      <h1 id="recipe-title"></h1>
+    </header>
+    
+	
+      <img id="image">
+      <ul id="ingredient-list">
+      </ul>
+   
+    <script>
+      let recipeObj = {
+        title: "Tomato Pasta",
+        imgSrc: "https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/recipe-img.png",
+        ingredients: ["Pasta", "Oil", "Onions", "Salt", "Tomato Pasta Sauce", "Cheese","Noodles",""]
+      };
+
+      const recipeTitle = document.getElementById('recipe-title');
+      recipeTitle.textContent = recipeObj.title;
+	  const image=document.getElementById("image")
+	  image.src=recipeObj.imgSrc
+	  //recipeTitle.style.text-align="center";
+
+      const recipeImage = document.getElementById('image');
+	  const divClass=document.getElementsByClassName("div")
+	  recipeImage.style.width="300px"
+	  recipeImage.style.height="300px"
+	  recipeImage.style.position="absolute"
+	  recipeImage.style.left="200px";Z
+      recipeImage.src = recipeObj.imgSrc;
+
+      const ingredientList = document.getElementById('ingredient-list');
+      for (let i = 0; i < recipeObj.ingredients.length; i++) {
+        const ingredient = recipeObj.ingredients[i];
+        const li = document.createElement('li');
+        li.textContent = ingredient;
+        ingredientList.appendChild(li);
+      }
+    </script>
+  </body>
+</html>

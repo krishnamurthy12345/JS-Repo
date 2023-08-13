@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESUME BUILDER</title>
+    <link rel="stylesheet" href="resume.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Dynamic Resume Builder</h1>
+        <form id="resumeform">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="name" required>
+        
+            <label for="phone">Phone Number:</label>
+            <input type="number" id="phone number" placeholder="Phone number" required>
+        
+            <label for="email">Gmail:</label>
+            <input type="email" id="email" placeholder="email" required>
+        
+            <label for="">LinkedIn Link</label>
+            <input type="text" id="LinkedIn" placeholder="LinkedIn" required>
+        
+            <label for="text">Github Link </label>
+            <input type="email" id="github" placeholder="github" required>
+    
+            <h2>Educational Qualifications</h2>
+            <div id="educations">
+                <div class="educationField">
+                    <input type="text" class="degree" placeholder="Degree" required><br>
+                    <input type="text" class="university" placeholder="University" required><br>
+                    <input type="number" class="year" placeholder="Passed year" required><br>
+                    <input type="number" class="percentage" placeholder="percentage" required>
+                </div>
+            </div>
+            <div class="add-button" onclick="addEducationField()">Add</div>
+            <h2>Work Experiences</h2>
+            <div id="Experiences">
+                <div class="experiences">
+                    <input type="text" class="company" placeholder="Company" required>
+                    <input type="text" class="position" placeholder="Position" required>
+                    <input type="text" class="duration" placeholder="Duration(in years)" required>
+                </div>
+            </div>
+            <div class="add-button" onclick="addWorkExperiences()">Add</div>
+            <h2>Certifications</h2>
+            <div id="Certifications">
+                <div class="certifications">
+                    <input type="text" class="certificate" placeholder="Certificate" required>
+                    <input type="text" class="authority" placeholder="Authority" required>
+                    <input type="number" class="certYear" placeholder="Year" required>
+                    <input type="number" class="percentage" placeholder="Percentage">
+                </div>
+            </div>
+            <div class="add-button" onclick="addCertificationField()">Add</div>
+            <h2>Skills</h2>
+            <div id="skills">
+                <div class="skills">
+                    <input type="text" class="skills" placeholder="Skills" required>
+                </div>
+            </div>
+            <div class="add-button" onclick="addSkills()">Add</div>
+            <div class="button-container">
+                <button type="button" onclick="saveResume()" style="background-color: grey;">Save Resume</button>
+                <button type="button" onclick="printResume()" style="background-color:blue;">Print Resume</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="resume.js"></script>
+</body>
+
+</html>

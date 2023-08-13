@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather App</title>
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      border-radius: 5px;
+      margin: 0 auto;
+      margin-top: 50px;
+      padding: 20px;
+      max-width: 400px;
+    }
+    .weather-icon {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1 class="text-center">Weather App</h1>
+      <div id="weather-card" class="text-center"></div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS CDN -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script>
+    // Fetch weather data for a city
+    function fetchWeather(city) {
+      const apiKey = '6c4d91b3af08c14843cdad9c0bffca85';
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          const weather = {
+            city: data.name,
+            temperature: Math.round(data.main.temp),
+            humidity: data.main.humidity,
+            description: data.weather[0].description,
+            icon: data.weather[0].icon
+          };
+
+          displayWeather(weather);
+        })
+        .catch(error => console.log(error));
+    }
+
+    // Display weather data in a card
+    function displayWeather(weather) {
+      const weatherCard = `
+        <h3>${weather.city}</h3>
+        <img src="https://openweathermap.org/img/w/${weather.icon}.png" alt="Weather Icon" class="weather-icon">
+        <p>Temperature: ${weather.temperature}°C</p>
+        <p>Humidity: ${weather.humidity}%</p>
+        <p>Description: ${weather.description}</p>
+      `;
+
+      const weatherCardContainer = document.getElementById('weather-card');
+      weatherCardContainer.innerHTML = weatherCard;
+    }
+
+    // Fetch weather for a specific city
+    fetchWeather('chennai');
+  </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="salaryslip.css">
+</head>
+<script>
+function payaction(){
+  var a = document.getElementById("Samount").value;
+document.getElementById("Ramount").value = a;
+document.getElementById("Oamount").value = a / 75;
+document.getElementById("Iamount").value = a / 75;
+document.getElementById("Bamount").value = a / 75;
+document.getElementById("Mamount").value = a / 99;
+document.getElementById("Eamount").value = a / 99;
+document.getElementById("Camount").value = a * 0;
+document.getElementById("Famount").value = a * 0;
+
+var sum = parseFloat(a) + parseFloat(a / 75) + parseFloat(a / 75) + parseFloat(a / 75) + parseFloat(a / 99) + parseFloat(a / 99) + parseFloat(a * 0) + parseFloat(a * 0);
+//storing total value of earning
+document.getElementById("TEarn").value = sum;
+
+document.getElementById("PFamount").value=a/100;
+document.getElementById("FHamount").value=a/10000;
+document.getElementById("FMamount").value=a*0;
+document.getElementById("FOamount").value=a*0;
+document.getElementById("SWamount").value=a*0;
+document.getElementById("ITamount").value=a*0;
+document.getElementById("PTamount").value=a*0;
+document.getElementById("ODamount").value=a*0;
+var totalded=parseFloat(a/100) + parseFloat(a/10000) + parseFloat(a*0) + parseFloat(a*0) + parseFloat(a*0) + parseFloat(a*0) + parseFloat(a*0);
+//calculating the total value of deduction
+document.getElementById("NET").value = totalded;
+document.getElementById("finalAM").value= sum + totalded;
+
+var jsoncreate={
+employeeN:document.getElementById("emid").value,
+employeAddress:document.getElementById("emad").value,
+employeeI:document.getElementById("emId").value,
+salaryD:document.getElementById("salaryId").value,
+salaryAmount:document.getElementById("Samount").value,
+}
+var payvalue={
+regularE:document.getElementById("Ramount").value,
+OverT:document.getElementById("Oamount").value,
+incentiveA:document.getElementById("Iamount").value,
+bonusA:document.getElementById("Bamount").value,
+maintenA:document.getElementById("Mamount").value,
+educatA:document.getElementById("Eamount").value,
+carA:document.getElementById("Camount").value,
+fuelA:document.getElementById("Famount").value,
+totalearn:document.getElementById("TEarn").value,
+providentD:document.getElementById("PFamount").value,
+federalHD:document.getElementById("FHamount".value),
+federalMD:document.getElementById("FMamount".value),
+federalOD:document.getElementById("FOamount".value),
+stateWD:document.getElementById("SWamount".value),
+incomeTD:document.getElementById("ITamount".value),
+professD:document.getElementById("PTamount".value),
+otherD:document.getElementById("ODamount".value),
+totalD:document.getElementById("NET".value),
+netSalary:document.getElementById("finalAM".value),
+}
+localStorage.setItem('jsoncreate',JSON.stringify(jsoncreate));
+localStorage.setItem('paydetails',JSON.stringify(payvalue));
+}
+function printid(){
+ window.location.href="salaryslip1.html"; 
+}
+</script>
+<body>
+  <section class="main">
+    <div>
+      <h1>TMS ENTERPRISE</h1>
+      <p>2/71,pollachi-madhu@gmail.com-9965399300</p> 
+      <label>Employee Name</label>
+      <input type="text" id="emid" value=""/>
+      <label>Employee Address</label>
+      <input type="text" id="emad" value=""/>
+      <label>Employee ID</label>
+      <input type="password" id="emId" value=""/>
+      <label>Salary Date</label>
+      <input type="date" id="salaryId" value=""/>
+    </div>
+    <div class="btn1">
+      <label>Salary</label>
+      <input type="text" id="Samount" value=""/>
+      <button class="butt" onclick="payaction()">Pay</button>
+    </div>
+    </section>
+    <section class="main2">
+      <div>
+        <h1 class="headpay">PAYSLIP</h1>
+        <div class="head2">
+        <h3 class="ear">Earning</h3>
+        <h3 class="ded">Deduction</h3>
+        </div>
+      </div>
+      <div>
+        <ol>
+          <dd><label>Regular Earning</label><input type="text" id="Ramount"></dd>
+          <dd><label>Overtime</label><input type="text" id="Oamount"></dd>
+          <dd><label>Incentive</label><input type="text" id="Iamount"></dd>
+          <dd><label>Bonus</label><input type="text" id="Bamount"></dd>
+          <dd><label>Maintance Allowance</label><input type="text" id="Mamount"></dd>
+          <dd><label>Education Allowance</label><input type="text" id="Eamount"></dd>
+          <dd><label>Car Allowance</label><input type="text" id="Camount"></dd>
+          <dd><label>fuel</label><input type="text" id="Famount"></dd>
+          </ol>
+          <div class="totaE">
+          <h4><label>Total Earning</label><input type="text" id="TEarn" value=""></h4>
+          </div>
+        </div>
+        <div class="rigdiv">
+          <ol>
+            <dd><label>Provident Fund</label><input type="text" id="PFamount"></dd>
+            <dd><label>Federal holding</label><input type="text" id="FHamount"></dd>
+            <dd><label>Federal Med</label><input type="text" id="FMamount"></dd>
+            <dd><label>Federal OASDI</label><input type="text" id="FOamount"></dd>
+            <dd><label>State Withholding</label><input type="text" id="SWamount"></dd>
+            <dd><label>Income Tax</label><input type="text" id="ITamount"></dd>
+            <dd><label>Professional tax</label><input type="text" id="PTamount"></dd>
+            <dd><label>Other deduction</label><input type="text" id="ODamount"></dd>
+            </ol>
+            <div>
+            <h4><label>Total Deduction</label><input type="text" id="NET" value=""></h4>
+            <h4><label>NET SALARY</label><input type="text" id="finalAM" value=""></h4>
+            <button id="printid" onclick="printid()">print</button>
+            </div>
+          </div>
+    </section>
+</body>
+</html>

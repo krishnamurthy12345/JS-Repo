@@ -1,0 +1,28 @@
+<!-- Object Image Identification -->
+<!-- ------------------------------- -->
+<!DOCTYPE html>
+<html>
+<title>Object Image Identification</title>
+<body>
+<h1 id="head"></h1>
+<img id="image">
+<p id="demo"></p>
+
+<script>
+let profileDetails={
+imgSrc:"https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/user-profile-img.png",
+name: "Ravi",
+age:25
+}
+var a=document.getElementById("image");
+a.src=profileDetails.imgSrc;
+var b=document.getElementById("head");
+b.textContent=profileDetails.name;
+var c=document.getElementById("demo");
+c.textContent=profileDetails.age;
+
+
+</script>
+
+</body>
+</html>

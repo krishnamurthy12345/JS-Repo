@@ -1,0 +1,50 @@
+<!-- Add to Cart -->
+<!-- -------------- -->
+
+<html>
+<head>
+<title>List to add</title>
+
+
+<style>
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#addBtn {
+  margin-left: 10px;
+}
+
+#cartList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align:center;
+}
+</style>
+</head>
+<body>
+<h1><b><center>LIST TO ADD</h1>
+<div class="row">
+  <input type="text" id="cart" placeholder="Enter item">
+  <button id="addBtn" onclick="add()">Add to Cart</button>
+</div>
+<ul id="cartList"></ul>
+<script>
+function add(){
+  const item = document.getElementById('cart');
+  //const addBtn = document.getElementById('addBtn');
+  const cartList = document.getElementById('cartList');
+  
+  var cartItemValue = item.value;
+  const li = document.createElement('li');
+  li.textContent = cartItemValue;
+  cartList.appendChild(li);
+  item.value = '';
+}
+</script>
+</body>
+</html>

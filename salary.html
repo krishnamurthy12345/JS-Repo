@@ -1,0 +1,24 @@
+<!-- Employee salary Details using DOM -->
+<!-- ---------------------------------------- -->
+
+<html>
+<head>
+<title>Employee salary details</title>
+
+</head>
+<body>
+<script>
+const name = prompt("Enter employee name:");
+const designation = prompt("Enter employee designation:");
+const basicPay = parseFloat(prompt("Enter employee basic pay:"));
+const HRA = 0.25 * basicPay;
+const DA = 0.1 * basicPay;
+const PF = 0.12 * basicPay;
+const grossPay = basicPay + HRA + DA;
+const netPay = grossPay - PF;
+const details = `Name: ${name}\nDesignation: ${designation}\nBasic Pay: ${basicPay}`;
+const pay = `HRA: ${HRA}\nDA: ${DA}\nPF: ${PF}\nGross Pay: ${grossPay}\nNet Pay: ${netPay}`;
+alert(`${details}\n\n${pay}`);
+</script>
+</body>
+</html>

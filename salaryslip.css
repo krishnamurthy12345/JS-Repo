@@ -1,0 +1,46 @@
+.main{
+    border: 2px solid palevioletred;
+    border-radius: 50px;
+    height: 170px;
+    text-align: center;
+    background-color: antiquewhite;
+}
+.btn1{
+    margin-top: 10px;
+   text-align: center;
+}
+.butt{
+    background-color:rosybrown;
+    border-color: palevioletred;
+    border-radius: 10px;
+}
+.headpay{
+    text-align: center;
+
+}
+.main2{
+    margin-top: 10px;
+    border: 2px solid palevioletred;
+    border-radius: 50px;
+    background-color:antiquewhite;
+}
+.head2{
+    display:flex;
+    border-radius: 50px;
+}
+.ear{
+    margin-left: 25px;
+}
+.ded{
+    margin-left: 600px;
+}
+dd{
+    margin-top: 12px;
+}
+.rigdiv{
+    margin-top:-310px;
+    margin-left: 650px;
+}
+.totaE{
+    margin-left: 150px;
+}

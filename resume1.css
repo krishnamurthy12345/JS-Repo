@@ -1,0 +1,69 @@
+CSS File
+---------
+ body {
+      background-image: url("pawel-nolbert-4u2U8EO9OzY-unsplash.jpg");
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      background:linear-gradient(rgb(167, 167, 255),pink);
+      border-radius: 5px;
+    }
+
+    h1 {
+      text-align: center;
+      color: white;
+      font-weight: 100px;
+    }
+
+    h2{
+      text-align: center;
+      color: whitesmoke;
+    }
+    form label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    form input, form button {
+      margin-top: 5px;
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+}
+
+     
+form button {
+  margin-left:120px;
+  margin-top: 30px;
+  width: 50%;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.add-button {
+  display: inline-block;
+  margin-top: 10px;
+  width: 60px;
+  height: 30px;
+  background-color:black;
+  border-radius: 10%;
+  color: white;
+  text-align: center;
+  line-height: 24px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.add-button:hover {
+ background-color: lightseagreen;
+}
